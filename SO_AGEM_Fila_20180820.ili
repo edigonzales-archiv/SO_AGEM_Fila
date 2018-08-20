@@ -1,0 +1,38 @@
+INTERLIS 2.3;
+
+/** Erfassungsmodell zur manuellen Nachführung / Editieren der TLM-Strassen für das Projekt FILA EG (Finanz- und Lastenausgleich Einwohnergemeinden).
+ */
+!!@ technicalContact=mailto:agi@bd.so.ch
+MODEL SO_AGEM_Fila_20180820 (de)
+AT "http://www.geo.so.ch/models/AGEM"
+VERSION "2018-08-20" 
+  // /**
+     * !!------------------------------------------------------------------------------
+     * !! Version    | wer | Änderung
+     * !!------------------------------------------------------------------------------
+     * !! 2018-08-20 | SZ  | Initialversion
+   // =
+  IMPORTS GeometryCHLV95_V1,CHAdminCodes_V1;
+
+  TOPIC TLM =
+
+    /** Strassenachse aus TLM. Manuell nachgeführt/editiert.
+     */
+    CLASS Strassenachse =
+      /** Breite der Strasse gemäss Text aus Originaldatensatz. Entspricht nicht dem Aufzähltyp gemäss Originalmodell.
+       */
+      Objektart : MANDATORY TEXT*40;
+      /** Verwendung für Finanz- und Lastenausgleich? ja/nein.
+       */
+      Fila : (
+        nein,
+        ja
+      );
+      /** Geometrie der Strassenachse.
+       */
+      Geometrie : MANDATORY GeometryCHLV95_V1.LineWithAltitude;
+    END Strassenachse;
+
+  END TLM;
+
+END SO_AGEM_Fila_20180820.
