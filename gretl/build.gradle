@@ -60,6 +60,6 @@ task exportTLMStrassen(type: Ili2pgExport) {
     dbschema = "agem_fila"
     models = "SO_AGEM_Fila_20180820"
     modeldir = "http://models.geo.admin.ch;../" 
-    dataFile = "fubar.xtf"
+    dataFile = "tlm_strassen.xtf"
     logFile = "ili2pg_export.log"
 }

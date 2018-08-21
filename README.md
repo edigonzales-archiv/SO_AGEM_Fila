@@ -5,7 +5,7 @@
 
 
 ## Geopackage / QGIS
-* Automatischer Wert für t_id? -> Es werden keine oder fast keine neuen erstellt. Feldrechner am Schluss? Uuid?
+* Automatischer Wert für t_id? -> SQlite ist selber so schlau und vergibt einen neue ID. Feld eventuell im QGS ausblenden.
 
 Umwandlung nach GeoPackage:
 
